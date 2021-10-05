@@ -30,6 +30,9 @@
   },
   "extra": {
     "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/app/"
+      },
       "file-mapping": {
         "[project-root]/.vscode/extensions.json": "assets/.vscode/extensions.json",
         "[project-root]/.vscode/settings.json": {
