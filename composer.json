@@ -53,8 +53,8 @@
         },
         "[web-root]/index.php": "assets/web/app/index.php",
         "[web-root]/wp-config.php": "assets/web/app/wp-config.php",
-        "[web-root]/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",
-        "[web-root]/mu-plugins/register-theme-directory.php": "assets/web/app/mu-plugins/register-theme-directory.php"
+        "[web-root]/app/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",
+        "[web-root]/app/mu-plugins/register-theme-directory.php": "assets/web/app/mu-plugins/register-theme-directory.php"
       }
     }
   }
