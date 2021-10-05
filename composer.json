@@ -55,7 +55,7 @@
           "overwrite": false
         },
         "[project-root]/.phpcs.xml.dist": "assets/.phpcs.xml.dist",
-        "[project-root]/renovate.json": "assets/renovate.json",
+        "[project-root]/.renovaterc.json": "assets/.renovaterc.json",
         "[project-root]/README.md": {
           "mode": "replace",
           "path": "assets/README.md",
