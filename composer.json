@@ -33,35 +33,29 @@
       "file-mapping": {
         "[project-root]/config/application.php": "assets/config/application.php",
         "[project-root]/config/environments/all.php": {
-          "mode": "replace",
           "path": "assets/config/environments/all.php",
           "overwrite": false
         },
         "[project-root]/config/environments/development.php": {
-          "mode": "replace",
           "path": "assets/config/environments/development.php",
           "overwrite": false
         },
         "[project-root]/config/environments/production.php": {
-          "mode": "replace",
           "path": "assets/config/environments/production.php",
           "overwrite": false
         },
         "[project-root]/.editorconfig": "assets/.editorconfig",
         "[project-root]/.vscode/extensions.json": "assets/.vscode/extensions.json",
         "[project-root]/.vscode/settings.json": {
-          "mode": "replace",
           "path": "assets/.vscode/settings.json",
           "overwrite": false
         },
         "[project-root]/.phpcs.xml.dist": "assets/.phpcs.xml.dist",
         "[project-root]/README.md": {
-          "mode": "replace",
           "path": "assets/README.md",
           "overwrite": false
         },
         "[project-root]/.nvmrc": {
-          "mode": "replace",
           "path": "assets/.nvmrc",
           "overwrite": false
         },
