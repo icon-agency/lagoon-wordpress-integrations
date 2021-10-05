@@ -30,9 +30,6 @@
   },
   "extra": {
     "drupal-scaffold": {
-      "locations": {
-        "web-root": "web/app/"
-      },
       "file-mapping": {
         "[project-root]/config/application.php": "assets/config/application.php",
         "[project-root]/web/app/index.php": "assets/web/app/index.php",
