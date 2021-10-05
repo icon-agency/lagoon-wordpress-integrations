@@ -13,6 +13,10 @@
 
 ## FAQ
 
+### How do I override Lando?
+
+Create .lando.local.yml file
+
 ### Installing plugins/themes
 
 https://wpackagist.org/
@@ -33,4 +37,28 @@ Example install theme:
 
 ```bash
 composer require wpackagist-theme/astra
+```
+
+### Should I commit the contrib modules I download?
+
+Composer recommends **no**. They provide [argumentation against but also
+workarounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
+
+### How can I apply patches to downloaded modules?
+
+If you need to apply patches (depending on the project being modified, a pull
+request is often a better solution), you can do so with the
+[composer-patches](https://github.com/cweagans/composer-patches) plugin.
+
+To add a patch to drupal module foobar insert the patches section in the extra
+section of composer.json:
+
+```json
+"extra": {
+    "patches": {
+        "drupal/foobar": {
+            "Patch description": "URL to patch"
+        }
+    }
+}
 ```
