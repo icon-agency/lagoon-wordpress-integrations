@@ -40,7 +40,6 @@
           "path": "assets/.vscode/settings.json",
           "overwrite": false
         },
-        "[project-root]/.eslintrc.json": "assets/.eslintrc.json",
         "[project-root]/.phpcs.xml.dist": "assets/.phpcs.xml.dist",
         "[project-root]/renovate.json": "assets/renovate.json",
         "[project-root]/README.md": {
