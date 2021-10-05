@@ -32,10 +32,6 @@
     "drupal-scaffold": {
       "file-mapping": {
         "[project-root]/config/application.php": "assets/config/application.php",
-        "[project-root]/web/app/index.php": "assets/web/app/index.php",
-        "[project-root]/web/app/wp-config.php": "assets/web/app/wp-config.php",
-        "[project-root]/web/app/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",
-        "[project-root]/web/app/mu-plugins/register-theme-directory.php": "assets/web/app/mu-plugins/register-theme-directory.php",
         "[project-root]/.vscode/extensions.json": "assets/.vscode/extensions.json",
         "[project-root]/.vscode/settings.json": {
           "mode": "replace",
@@ -53,7 +49,11 @@
           "mode": "replace",
           "path": "assets/.nvmrc",
           "overwrite": false
-        }
+        },
+        "[web-root]/index.php": "assets/web/app/index.php",
+        "[web-root]/wp-config.php": "assets/web/app/wp-config.php",
+        "[web-root]/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",
+        "[web-root]/mu-plugins/register-theme-directory.php": "assets/web/app/mu-plugins/register-theme-directory.php"
       }
     }
   }
