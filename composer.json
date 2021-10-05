@@ -20,6 +20,7 @@
     }
   },
   "require": {
+    "drupal/core-composer-scaffold": "^9.2",
     "wpackagist-plugin/fastly": "^1.2.18"
   },
   "minimum-stability": "stable",
@@ -31,6 +32,21 @@
     "drupal-scaffold": {
       "file-mapping": {
         "[project-root]/config/application.php": "assets/config/application.php",
+        "[project-root]/config/environments/all.php": {
+          "mode": "replace",
+          "path": "assets/config/environments/all.php",
+          "overwrite": false
+        },
+        "[project-root]/config/environments/development.php": {
+          "mode": "replace",
+          "path": "assets/config/environments/development.php",
+          "overwrite": false
+        },
+        "[project-root]/config/environments/production.php": {
+          "mode": "replace",
+          "path": "assets/config/environments/production.php",
+          "overwrite": false
+        },
         "[project-root]/.editorconfig": "assets/.editorconfig",
         "[project-root]/.vscode/extensions.json": "assets/.vscode/extensions.json",
         "[project-root]/.vscode/settings.json": {

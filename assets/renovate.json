@@ -12,23 +12,23 @@
       "datasources": ["packagist"],
       "updateTypes": ["patch", "minor"],
       "packageNames": [
-        "drupal/core-dev",
-        "drupal/core-recommended",
-        "drupal/core-composer-scaffold",
-        "drupal/core-project-message",
-        "drupal/core-vendor-hardening"
+        "roots/wordpress",
+        "roots/wp-config",
+        "roots/wp-password-bcrypt",
+        "roots/bedrock-autoloader",
+        "roots/bedrock-disallow-indexing"
       ],
-      "groupName": "Drupal Core"
+      "groupName": "WordPress Core"
     },
     {
       "datasources": ["packagist"],
       "updateTypes": ["major"],
       "packageNames": [
-        "drupal/core-dev",
-        "drupal/core-recommended",
-        "drupal/core-composer-scaffold",
-        "drupal/core-project-message",
-        "drupal/core-vendor-hardening"
+        "roots/wordpress",
+        "roots/wp-config",
+        "roots/wp-password-bcrypt",
+        "roots/bedrock-autoloader",
+        "roots/bedrock-disallow-indexing"
       ],
       "enabled": false
     }

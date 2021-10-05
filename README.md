@@ -13,20 +13,18 @@ Opinionated config and structure for development. Recommended base modules and p
   "extra": {
     "enable-patching": true,
     "drupal-scaffold": {
+      "gitignore": false,
       "allowed-packages": [
         "iconagency/wordpress_integrations"
       ],
+      "locations": {
+        "web-root": "web/"
+      }
     }
   }
 ```
 
-This library will install:
-- vscode recommendations
-- drush.yml defaults
-- .nvmrc
-- renovate.json
-- phpcs standards
-- modules for use with lagoon/amazee/fastly
+Package borrows the drupal-scaffold functionality, because it's good.
 
 ## This library
 - https://packagist.org/packages/iconagency/drupal_integrations
