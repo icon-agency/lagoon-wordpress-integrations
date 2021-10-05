@@ -3,7 +3,7 @@ options:
 
 pipelines:
   tags:
-    9.*:
+    5.*:
       - step:
           name: Trigger Drupal build
           script:
@@ -11,8 +11,8 @@ pipelines:
               variables:
                 BITBUCKET_USERNAME: $PIPELINES_TRIGGER_USER
                 BITBUCKET_APP_PASSWORD: $PIPELINES_TRIGGER_PASS
-                BRANCH_NAME: "9.x"
+                BRANCH_NAME: "5.x"
                 ACCOUNT: "iconagency"
-                REPOSITORY: "lagoon-drupal"
+                REPOSITORY: "lagoon-wordpress"
           caches:
             - docker
