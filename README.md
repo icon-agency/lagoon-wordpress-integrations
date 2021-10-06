@@ -26,14 +26,11 @@ Opinionated config and structure for development. Recommended base modules and p
 Package borrows the drupal-scaffold functionality, because it's good.
 
 ## This library
-- https://packagist.org/packages/iconagency/drupal_integrations
-- https://bitbucket.org/iconagency/lagoon-drupal-integrations
+- https://packagist.org/packages/iconagency/wordpress_integrations
+- https://bitbucket.org/iconagency/lagoon-wordpress-integrations
 
 ## Icon Agency docs
 - https://dev.iconagency.com.au/
 
-## Drupal project
-- https://bitbucket.org/iconagency/lagoon-drupal/
-
-## Recommends
-- https://github.com/amazeeio/drupal-integrations
+## Wordpress project
+- https://bitbucket.org/iconagency/lagoon-wordpress/
