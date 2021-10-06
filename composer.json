@@ -56,10 +56,6 @@
           "path": "assets/README.md",
           "overwrite": false
         },
-        "[project-root]/.nvmrc": {
-          "path": "assets/.nvmrc",
-          "overwrite": false
-        },
         "[web-root]/index.php": "assets/web/index.php",
         "[web-root]/wp-config.php": "assets/web/wp-config.php",
         "[web-root]/app/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",
