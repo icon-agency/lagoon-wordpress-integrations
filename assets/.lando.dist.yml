@@ -1,0 +1,18 @@
+services:
+  nginx:
+    overrides:
+      environment:
+        BASIC_AUTH: "off"
+
+tooling:
+  wp:
+    service: cli
+    description: Runs wp commands
+
+  pull:
+    cmd: "/lagoon-tools/assets/lando/wp-cli/lagoon-pull.sh"
+
+  push:
+    cmd: "/lagoon-tools/assets/lando/wp-cli/lagoon-push.sh"
+
+  drush: disabled

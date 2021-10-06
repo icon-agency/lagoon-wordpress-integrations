@@ -45,6 +45,7 @@
           "overwrite": false
         },
         "[project-root]/.editorconfig": "assets/.editorconfig",
+        "[project-root]/.lando.dist.yml": "assets/.lando.dist.yml",
         "[project-root]/.vscode/extensions.json": "assets/.vscode/extensions.json",
         "[project-root]/.vscode/settings.json": {
           "path": "assets/.vscode/settings.json",
