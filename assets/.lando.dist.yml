@@ -1,9 +1,4 @@
-services:
-  nginx:
-    overrides:
-      environment:
-        BASIC_AUTH: "off"
-
+# Add some custom tooling that isn't in the Lando Lagoon beta yet.
 tooling:
   pull:
     cmd: "/lagoon-tools/assets/wordpress/5x/lando/lagoon-pull.sh"
