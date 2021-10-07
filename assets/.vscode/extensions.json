@@ -1,13 +1,11 @@
 {
   "recommendations": [
     "jixabon.lando-ui",
-    "eg2.vscode-npm-script",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "wongjn.php-sniffer",
     "bmewburn.vscode-intelephense-client",
     "neilbrayfield.php-docblocker",
-    "mblode.twig-language-2",
     "stylelint.vscode-stylelint",
     "csstools.postcss"
   ]
