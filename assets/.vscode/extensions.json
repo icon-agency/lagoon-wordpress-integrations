@@ -1,12 +1,12 @@
 {
   "recommendations": [
-    "jixabon.lando-ui",
+    "bmewburn.vscode-intelephense-client",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "wongjn.php-sniffer",
-    "bmewburn.vscode-intelephense-client",
+    "jixabon.lando-ui",
     "neilbrayfield.php-docblocker",
     "stylelint.vscode-stylelint",
-    "csstools.postcss"
+    "wongjn.php-sniffer",
   ]
 }
