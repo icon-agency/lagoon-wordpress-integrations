@@ -5,3 +5,7 @@ tooling:
 
   push:
     cmd: "/lagoon-tools/assets/wordpress/5x/lando/lagoon-push.sh"
+
+  wp:
+    cmd: wp
+    service: cli
