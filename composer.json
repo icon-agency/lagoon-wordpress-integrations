@@ -38,18 +38,6 @@
         },
         "[project-root]/.vscode/README.md": "assets/.vscode/README.md",
         "[project-root]/config/application.php": "assets/config/application.php",
-        "[project-root]/config/environments/all.php": {
-          "path": "assets/config/environments/all.php",
-          "overwrite": false
-        },
-        "[project-root]/config/environments/development.php": {
-          "path": "assets/config/environments/development.php",
-          "overwrite": false
-        },
-        "[project-root]/config/environments/production.php": {
-          "path": "assets/config/environments/production.php",
-          "overwrite": false
-        },
         "[web-root]/index.php": "assets/web/index.php",
         "[web-root]/wp-config.php": "assets/web/wp-config.php",
         "[web-root]/app/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",

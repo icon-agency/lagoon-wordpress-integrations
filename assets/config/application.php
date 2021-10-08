@@ -9,6 +9,14 @@
  * A good default policy is to deviate from the production config as little as
  * possible. Try to define as much of your configuration in this file as you
  * can.
+ * 
+ * PHP version 7.4
+ * 
+ * @category Config
+ * @package  IconAgency
+ * @author   Icon Agency <hello@iconagency.com.au>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://iconagency.com.au
  */
 
 use Roots\WPConfig\Config;
