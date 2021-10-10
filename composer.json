@@ -42,6 +42,7 @@
         "[web-root]/wp-config.php": "assets/web/wp-config.php",
         "[web-root]/app/mu-plugins/bedrock-autoloader.php": "assets/web/app/mu-plugins/bedrock-autoloader.php",
         "[web-root]/app/mu-plugins/register-theme-directory.php": "assets/web/app/mu-plugins/register-theme-directory.php",
+        "[web-root]/app/mu-plugins/stage-file-proxy.php": "assets/web/app/mu-plugins/stage-file-proxy.php",
         "[project-root]/.editorconfig": "assets/.editorconfig",
         "[project-root]/.lando.dist.yml": "assets/.lando.dist.yml",
         "[project-root]/.phpcs.xml.dist": "assets/.phpcs.xml.dist",
