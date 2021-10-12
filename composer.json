@@ -21,7 +21,8 @@
   },
   "require": {
     "drupal/core-composer-scaffold": "^9.2",
-    "wpackagist-plugin/fastly": "^1.2.18"
+    "wpackagist-plugin/fastly": "^1.2.18",
+    "wp_lagoon_logs/wp_lagoon_logs": "^0.2"
   },
   "minimum-stability": "stable",
   "prefer-stable": true,
