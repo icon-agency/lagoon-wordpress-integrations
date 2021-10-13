@@ -93,7 +93,7 @@ Config::define( 'NONCE_SALT', getenv( 'WP_NONCE_SALT' ) );
  * Custom Settings
  */
 Config::define( 'AUTOMATIC_UPDATER_DISABLED', true );
-Config::define( 'DISABLE_WP_CRON', getenv( 'DISABLE_WP_CRON' ) ?: false );
+Config::define( 'DISABLE_WP_CRON', getenv( 'DISABLE_WP_CRON' ) ?: true );
 // Disable the plugin and theme file editor in the admin.
 Config::define( 'DISALLOW_FILE_EDIT', true );
 // Disable plugin and theme updates and installation from the admin.
