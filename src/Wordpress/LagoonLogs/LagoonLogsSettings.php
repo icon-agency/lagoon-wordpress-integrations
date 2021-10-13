@@ -23,10 +23,10 @@ class LagoonLogsSettings
      */
     public function add_plugin_page()
     {
-      // This page will be under "Settings"
+        // This page will be under "Settings"
         add_options_page(
             'Settings Admin',
-            'WP Lagoon logs Settings',
+            'Lagoon Logs',
             'manage_options',
             'wp-lagoon-logs-admin',
             [$this, 'wp_lagoon_logs_settings_page']
@@ -41,7 +41,7 @@ class LagoonLogsSettings
         $this->options = get_option('wp_ll_settings');
         ?>
             <div class="wrap">
-                <h1>WP Lagoon logs configuration settings.</h1>
+                <h1>Lagoon Logs</h1>
                 <form method="post" action="options.php">
                 <?php
                     settings_fields('wp_ll_option_group');
@@ -102,7 +102,7 @@ class LagoonLogsSettings
      */
     public function wp_ll_description()
     {
-        print 'This page simply lists the current settings for the Lagoon Logs module. The defaults are set in configuration, this page is meant primarily for troubleshooting.';
+        print 'This page simply lists the current settings for the Lagoon Logs module.';
     }
 
     /**
@@ -110,6 +110,10 @@ class LagoonLogsSettings
      */
     public function text_field_callback($name)
     {
-        printf('<div class="ll-settings-key-value"><input type="text" name="wp_ll_settings[%s]" disabled="disabled" value="%s" /></div>', $name, isset($this->options[$name]) ? esc_attr($this->options[$name]) : '');
+        printf('
+            <div class="ll-settings-key-value">
+                <input type="text" name="wp_ll_settings[%s]" disabled="disabled" value="%s" />
+            </div>
+        ', $name, isset($this->options[$name]) ? esc_attr($this->options[$name]) : '');
     }
 }
