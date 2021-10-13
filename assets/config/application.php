@@ -120,21 +120,24 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 'https' === $_SERVER['HTTP_X
 }
 
 $all_config = __DIR__ . '/environments/all.php';
-
 if ( file_exists( $all_config ) ) {
 	include_once $all_config;
 }
 
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
-
 if ( file_exists( $env_config ) ) {
 	include_once $env_config;
 }
 
 $local_config = __DIR__ . '/environments/local.php';
-
 if ( file_exists( $local_config ) ) {
 	include_once $local_config;
+}
+
+// Hide debug on install.
+$request_uri = filter_input( INPUT_SERVER, 'REQUEST_URI' );
+if ( stripos( $request_uri, '/wp-admin/install.php' ) !== false ) {
+	Config::define( 'WP_DEBUG', false );
 }
 
 Config::apply();
