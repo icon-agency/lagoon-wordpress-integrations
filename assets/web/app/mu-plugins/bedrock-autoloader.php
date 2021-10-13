@@ -7,10 +7,12 @@
  * Author:       Roots
  * Author URI:   https://roots.io/
  * License:      MIT License
+ *
+ * @package IconAgency
  */
 
 namespace Roots\Bedrock;
 
-if (is_blog_installed() && class_exists(Autoloader::class)) {
-    new Autoloader();
+if ( is_blog_installed() && class_exists( Autoloader::class ) ) {
+	new Autoloader();
 }

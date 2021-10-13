@@ -7,8 +7,10 @@
  * Author:       Roots
  * Author URI:   https://roots.io/
  * License:      MIT License
+ *
+ * @package IconAgency
  */
 
-if (!defined('WP_DEFAULT_THEME')) {
-    register_theme_directory(ABSPATH . 'wp-content/themes');
+if ( ! defined( 'WP_DEFAULT_THEME' ) ) {
+	register_theme_directory( ABSPATH . 'wp-content/themes' );
 }
