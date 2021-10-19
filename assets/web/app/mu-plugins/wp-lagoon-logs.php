@@ -37,22 +37,24 @@ function wp_lagoon_logs_extension_init() {
 	wp_lagoon_logs_default_settings();
 }
 
-add_action( 'init', 'wp_lagoon_logs_extension_init' );
+if ( is_blog_installed() ) {
+	add_action( 'init', 'wp_lagoon_logs_extension_init' );
 
-if ( getenv( 'LAGOON_ENVIRONMENT' ) ) {
-	$options = get_option( 'wp_ll_settings' );
-	$handler = new LagoonHandler(
-		$options['ll_settings_logs_host'],
-		$options['ll_settings_logs_port'],
-		$options['ll_settings_logs_identifier']
-	);
-	$handler->initHandler();
-} else {
-	// Start Wonolog.
-	Wonolog\bootstrap();
-}
+	if ( getenv( 'LAGOON_ENVIRONMENT' ) ) {
+		$options = get_option( 'wp_ll_settings' );
+		$handler = new LagoonHandler(
+			$options['ll_settings_logs_host'],
+			$options['ll_settings_logs_port'],
+			$options['ll_settings_logs_identifier']
+		);
+		$handler->initHandler();
+	} else {
+		// Start Wonolog.
+		Wonolog\bootstrap();
+	}
 
-// Settings page is accessible to admin user.
-if ( is_admin() ) {
-	$wp_ll_settings_page = new LagoonLogsSettings();
+	// Settings page is accessible to admin user.
+	if ( is_admin() ) {
+		$wp_ll_settings_page = new LagoonLogsSettings();
+	}
 }
