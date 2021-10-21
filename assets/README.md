@@ -17,6 +17,10 @@
 
 Create .lando.local.yml file
 
+### How can I optimize my Lando?
+
+Take a look at [Lando performance](https://docs.lando.dev/config/performance.html#configuration)
+
 ### Installing plugins/themes
 
 https://wpackagist.org/
