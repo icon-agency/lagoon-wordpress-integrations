@@ -29,7 +29,7 @@
 
 $request_uri = filter_input( INPUT_SERVER, 'REQUEST_URI' );
 
-if ( stripos( $request_uri, '/app/uploads/' ) !== false && getenv( 'LAGOON_ENVIRONMENT_TYPE' ) !== 'production' ) {
+if ( stripos( $request_uri, '/app/uploads/' ) !== false && getenv( 'LAGOON_ENVIRONMENT' ) && getenv( 'LAGOON_ENVIRONMENT_TYPE' ) !== 'production' ) {
 	sfp_expect();
 }
 
