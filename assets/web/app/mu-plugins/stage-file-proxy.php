@@ -218,7 +218,6 @@ function sfp_image_sizes_advanced( array $sizes ) {
 	// Force WP to not make sizes by telling it there's no sizes to make.
 	return array();
 }
-add_filter( 'intermediate_image_sizes_advanced', 'sfp_image_sizes_advanced' );
 
 /**
  * Trick WP into thinking the images were generated anyways.
@@ -265,7 +264,6 @@ function sfp_generate_metadata( array $meta ) {
 
 	return $meta;
 }
-add_filter( 'wp_generate_attachment_metadata', 'sfp_generate_metadata' );
 
 /**
  * Get the relative file path by stripping out the /app/uploads/ business.
