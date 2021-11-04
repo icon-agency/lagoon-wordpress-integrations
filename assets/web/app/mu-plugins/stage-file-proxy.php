@@ -27,10 +27,15 @@
  * See: http://wordpress.org/plugins/dynamic-image-resizer/
  */
 
-$request_uri = filter_input( INPUT_SERVER, 'REQUEST_URI' );
 
-if ( stripos( $request_uri, '/app/uploads/' ) !== false && getenv( 'LAGOON_ENVIRONMENT' ) && getenv( 'LAGOON_ENVIRONMENT_TYPE' ) !== 'production' ) {
+$plugin_enabled = getenv( 'LAGOON_ENVIRONMENT' ) && getenv( 'LAGOON_ENVIRONMENT_TYPE' ) !== 'production';
+$request_uri    = filter_input( INPUT_SERVER, 'REQUEST_URI' );
+
+if ( false !== stripos( $request_uri, '/app/uploads/' ) && $plugin_enabled ) {
 	sfp_expect();
+
+	add_filter( 'intermediate_image_sizes_advanced', 'sfp_image_sizes_advanced' );
+	add_filter( 'wp_generate_attachment_metadata', 'sfp_generate_metadata' );
 }
 
 /**
