@@ -65,6 +65,12 @@ Config::define( 'WP_CONTENT_DIR', $webroot_dir . Config::get( 'CONTENT_DIR' ) );
 Config::define( 'WP_CONTENT_URL', Config::get( 'WP_HOME' ) . Config::get( 'CONTENT_DIR' ) );
 
 /**
+ * Logging plugin default into uploads/private
+ */
+Config::define( 'WONOLOG_DEFAULT_HANDLER_ROOT_DIR', Config::get( 'WP_CONTENT_DIR' ) . '/uploads/private/wonolog/' );
+Config::define( 'WFWAF_LOG_PATH', Config::get( 'WP_CONTENT_DIR' ) . '/uploads/private/wflogs/' );
+
+/**
  * DB settings
  */
 Config::define( 'DB_NAME', getenv( 'MARIADB_DATABASE' ) ?: 'lagoon' );
