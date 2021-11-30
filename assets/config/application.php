@@ -58,6 +58,11 @@ Config::define( 'PURGELY_FASTLY_SERVICE_ID', getenv( 'FASTLY_API_SERVICE' ) );
 Config::define( 'FASTLY_SITECODE', getenv( 'FASTLY_SITE_ID' ) );
 
 /**
+ * Advanced Custom Fields
+ */
+Config::define( 'ACF_PRO_LICENSE', getenv( 'ACF_PRO_LICENSE' ) );
+
+/**
  * Custom Content Directory
  */
 Config::define( 'CONTENT_DIR', '/app' );

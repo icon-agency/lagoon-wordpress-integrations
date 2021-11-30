@@ -66,3 +66,35 @@ section of composer.json:
     }
 }
 ```
+
+### Installing Advanced Custom Fields
+
+Add your key to `.env` and rebuild your container...
+
+```conf
+ACF_PRO_LICENSE="Check 1password for details..."
+```
+
+```bash
+lando rebuild
+```
+
+Add the Icon Agency ACF repository to `composer.json`
+
+```json
+  "repositories": {
+    "advanced-custom-fields": {
+      "type": "composer",
+      "url": "https://auth-acf-composer-proxy.iconagency.com.au/wordpress-muplugin/",
+      "only": [
+        "advanced-custom-fields/*"
+      ]
+    }
+  },
+```
+
+Require ACF
+
+```bash
+lando composer require advanced-custom-fields/advanced-custom-fields-pro
+```
