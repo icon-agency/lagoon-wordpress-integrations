@@ -13,7 +13,7 @@
 $plugin_enabled = getenv( 'LAGOON_ENVIRONMENT' ) && getenv( 'LAGOON_ENVIRONMENT_TYPE' ) !== 'production';
 $request_uri    = filter_input( INPUT_SERVER, 'REQUEST_URI' );
 
-if ( false !== stripos( $request_uri, '/app/uploads/' ) && $plugin_enabled ) {
+if ( preg_match( '#^/app/uploads/#', $request_uri ) && $plugin_enabled ) {
 	sfp_expect();
 }
 
@@ -39,6 +39,7 @@ function sfp_serve_requested_file( $filename ) {
 	ob_end_clean();
 	header( 'Content-Type: ' . $type );
 	header( 'Content-Length: ' . filesize( $filename ) );
+
 	readfile( $filename );
 
 	exit;
@@ -56,7 +57,12 @@ function sfp_dispatch() {
 		sfp_error( 'No URL set for sfp' );
 	}
 
+	if ( ! in_array( $mode, array( 'local', 'header' ), true ) ) {
+		sfp_error( 'Unknown mode for sfp' );
+	}
+
 	$request_uri  = filter_input( INPUT_SERVER, 'REQUEST_URI' );
+	$request_uri  = urldecode( $request_uri );
 	$request_uri  = strtok( $request_uri, '?' );
 	$relative_uri = str_ireplace( '/app/uploads/', '', $request_uri );
 
@@ -73,6 +79,8 @@ function sfp_dispatch() {
 	}
 
 	if ( 'local' === $mode ) {
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+
 		// Path to save files.
 		$upload       = _wp_upload_dir();
 		$absolute_dir = untrailingslashit( $upload['basedir'] . '/' . $relative_path );
@@ -82,24 +90,23 @@ function sfp_dispatch() {
 
 		// Download it.
 		if ( ! file_exists( $absolute_filename ) ) {
-			require_once ABSPATH . 'wp-admin/includes/file.php';
-
 			$remote_file = download_url( $remote_url );
+
 			if ( ! is_wp_error( $remote_file ) ) {
-				mkdir( $absolute_dir, 0755, true );
+				wp_mkdir_p( $absolute_dir );
 				rename( $remote_file, $absolute_filename );
+			} else {
+				sfp_error( 'SFP file not found', 404 );
 			}
 		}
 
 		// Serve it.
 		if ( file_exists( $absolute_filename ) ) {
 			sfp_serve_requested_file( $absolute_filename );
-		} else {
-			sfp_error( 'Could not download original', 404 );
 		}
-	} else {
-		sfp_error( 'Unknown sfp method' );
 	}
+
+	sfp_error( 'SFP failed to serve', 404 );
 }
 
 /**
