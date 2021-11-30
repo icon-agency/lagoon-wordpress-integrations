@@ -64,7 +64,7 @@ function sfp_dispatch() {
 	$request_uri  = filter_input( INPUT_SERVER, 'REQUEST_URI' );
 	$request_uri  = urldecode( $request_uri );
 	$request_uri  = strtok( $request_uri, '?' );
-	$relative_uri = str_ireplace( '/app/uploads/', '', $request_uri );
+	$relative_uri = preg_replace( '#^/app/uploads/#', '', $request_uri );
 
 	$production_url = untrailingslashit( $production_url );
 	$remote_url     = $production_url . '/' . $relative_uri;
