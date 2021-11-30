@@ -85,7 +85,7 @@ function sfp_dispatch() {
 			require_once ABSPATH . 'wp-admin/includes/file.php';
 
 			$remote_file = download_url( $remote_url );
-			if ( $remote_file ) {
+			if ( ! is_wp_error( $remote_file ) ) {
 				mkdir( $absolute_dir, 0755, true );
 				rename( $remote_file, $absolute_filename );
 			}
