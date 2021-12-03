@@ -63,11 +63,6 @@ Config::define( 'FASTLY_SITECODE', getenv( 'FASTLY_SITE_ID' ) );
 Config::define( 'ACF_PRO_LICENSE', getenv( 'ACF_PRO_LICENSE' ) );
 
 /**
- * Wordfence
- */
-Config::define( 'WFWAF_STORAGE_ENGINE', getenv( 'WFWAF_STORAGE_ENGINE' ) ?: 'mysqli' );
-
-/**
  * Custom Content Directory
  */
 Config::define( 'CONTENT_DIR', '/app' );
@@ -86,6 +81,18 @@ Config::define( 'DB_COLLATE', '' );
 
 // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 $table_prefix = getenv( 'DB_PREFIX' ) ?: 'wp_';
+
+/**
+ * Wordfence
+ */
+Config::define( 'WFWAF_STORAGE_ENGINE', getenv( 'WFWAF_STORAGE_ENGINE' ) ?: 'mysqli' );
+Config::define( 'WFWAF_DB_NAME', getenv( 'WFWAF_DB_NAME' ) ?: Config::get( 'DB_NAME' ) );
+Config::define( 'WFWAF_DB_USER', getenv( 'WFWAF_DB_USER' ) ?: Config::get( 'DB_USER' ) );
+Config::define( 'WFWAF_DB_PASSWORD', getenv( 'WFWAF_DB_PASSWORD' ) ?: Config::get( 'DB_PASSWORD' ) );
+Config::define( 'WFWAF_DB_HOST', getenv( 'WFWAF_DB_HOST' ) ?: Config::get( 'DB_HOST' ) );
+Config::define( 'WFWAF_DB_CHARSET', getenv( 'WFWAF_DB_CHARSET' ) ?: Config::get( 'DB_CHARSET' ) );
+Config::define( 'WFWAF_DB_COLLATE', getenv( 'WFWAF_DB_COLLATE' ) ?: Config::get( 'DB_COLLATE' ) );
+Config::define( 'WFWAF_TABLE_PREFIX', getenv( 'WFWAF_TABLE_PREFIX' ) ?: $table_prefix );
 
 /**
  * Authentication Unique Keys and Salts
