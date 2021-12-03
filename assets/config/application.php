@@ -63,6 +63,11 @@ Config::define( 'FASTLY_SITECODE', getenv( 'FASTLY_SITE_ID' ) );
 Config::define( 'ACF_PRO_LICENSE', getenv( 'ACF_PRO_LICENSE' ) );
 
 /**
+ * Wordfence
+ */
+Config::define( 'WFWAF_STORAGE_ENGINE', getenv( 'WFWAF_STORAGE_ENGINE' ) ?: 'mysqli' );
+
+/**
  * Custom Content Directory
  */
 Config::define( 'CONTENT_DIR', '/app' );
