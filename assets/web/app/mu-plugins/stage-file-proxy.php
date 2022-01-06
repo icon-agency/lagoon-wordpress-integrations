@@ -90,6 +90,17 @@ function sfp_dispatch() {
 
 		// Download it.
 		if ( ! file_exists( $absolute_filename ) ) {
+
+			// Unleash the kracken.
+			add_filter(
+				'http_request_args',
+				function ( $args ) {
+					$args['reject_unsafe_urls'] = false;
+					return $args;
+				},
+				999
+			);
+
 			$remote_file = download_url( $remote_url );
 
 			if ( ! is_wp_error( $remote_file ) ) {
