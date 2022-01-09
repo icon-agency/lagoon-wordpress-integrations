@@ -54,11 +54,7 @@
         "[web-root]/app/mu-plugins/wp-lagoon-logs.php": "assets/web/app/mu-plugins/wp-lagoon-logs.php",
         "[project-root]/.editorconfig": "assets/.editorconfig",
         "[project-root]/.lando.dist.yml": "assets/.lando.dist.yml",
-        "[project-root]/.phpcs.xml.dist": "assets/.phpcs.xml.dist",
-        "[project-root]/README.md": {
-          "path": "assets/README.md",
-          "overwrite": false
-        }
+        "[project-root]/.phpcs.xml.dist": "assets/.phpcs.xml.dist"
       }
     }
   }
