@@ -4,39 +4,37 @@
   "php-docblocker.returnGap": true,
   "php-docblocker.useShortNames": true,
   "phpSniffer.autoDetect": true,
-  "[php]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": false,
-    "editor.formatOnPaste": false,
-    "editor.defaultFormatter": "wongjn.php-sniffer"
-  },
   "scss.validate": false,
+  "stylelint.validate": ["scss"],
   "[scss]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnType": false,
     "editor.formatOnPaste": false,
     "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": true
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnType": false,
     "editor.formatOnPaste": false,
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[yml]": {
-    "editor.formatOnSave": true,
+  "[vue]": {
+    "editor.formatOnSave": false,
     "editor.formatOnType": false,
     "editor.formatOnPaste": false,
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[twig]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
   },
   "[markdown]": {
     "editor.formatOnSave": true,
@@ -44,11 +42,37 @@
     "editor.formatOnPaste": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[php]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "wongjn.php-sniffer"
+  },
+  "[yml]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.module": "php",
+    "*.inc": "php",
+    "*.theme": "php",
+    "*.install": "php"
+  },
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
   "html.format.indentHandlebars": false,
   "html.format.indentInnerHtml": true,
   "html.format.preserveNewLines": false,
   "typescript.validate.enable": false,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "eslint.validate": ["javascript", "vue", "vue-html", "html"],
+  "vetur.format.defaultFormatter.html": "none",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.validation.interpolation": true,
+  "vetur.validation.template": false,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/vendor/**": true,
