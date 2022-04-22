@@ -37,7 +37,6 @@
   "extra": {
     "drupal-scaffold": {
       "file-mapping": {
-        "[project-root]/.vscode/README.md": "assets/.vscode/README.md",
         "[project-root]/config/application.php": "assets/config/application.php",
         "[web-root]/index.php": "assets/web/index.php",
         "[web-root]/wp-config.php": "assets/web/wp-config.php",
