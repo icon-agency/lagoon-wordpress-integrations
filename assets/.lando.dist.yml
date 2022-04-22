@@ -1,10 +1,10 @@
 # Add some custom tooling that isn't in the Lando Lagoon beta yet.
 tooling:
   pull:
-    cmd: "/lagoon-tools/assets/wordpress/5x/lando/lagoon-pull.sh"
+    cmd: "/lagoon-tools/assets/wordpress/6x/lando/lagoon-pull.sh"
 
   push:
-    cmd: "/lagoon-tools/assets/wordpress/5x/lando/lagoon-push.sh"
+    cmd: "/lagoon-tools/assets/wordpress/6x/lando/lagoon-push.sh"
 
   wp:
     cmd: wp

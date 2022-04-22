@@ -21,7 +21,6 @@
   },
   "require": {
     "drupal/core-composer-scaffold": "^9.2",
-    "wpackagist-plugin/better-search-replace": "^1.3.4",
     "wpackagist-plugin/fastly": "^1.2.18",
     "inpsyde/wonolog": "^1.0"
   },
@@ -38,12 +37,6 @@
   "extra": {
     "drupal-scaffold": {
       "file-mapping": {
-        "[project-root]/.vscode/extensions.json": "assets/.vscode/extensions.json",
-        "[project-root]/.vscode/launch.json": "assets/.vscode/launch.json",
-        "[project-root]/.vscode/settings.json": {
-          "path": "assets/.vscode/settings.json",
-          "overwrite": false
-        },
         "[project-root]/.vscode/README.md": "assets/.vscode/README.md",
         "[project-root]/config/application.php": "assets/config/application.php",
         "[web-root]/index.php": "assets/web/index.php",
