@@ -2,7 +2,6 @@
 
 namespace IconAgency\LagoonLogs;
 
-use Inpsyde\Wonolog;
 use Monolog\Handler\SocketHandler;
 use Monolog\Formatter\LogstashFormatter;
 
@@ -33,19 +32,16 @@ class LagoonHandler {
 	/**
 	 * Initialize lagoon socket handler to log.
 	 */
-	public function initHandler() {
-		$formatter = new LogstashFormatter( $this->getHostProcessIndex(), null, null, 'ctxt_', 1 );
+	public function handler(): SocketHandler {
+		$formatter = new LogstashFormatter( $this->getHostProcessIndex(), null, 'extra', 'ctxt_' );
 
-		// Create socket handler.
-		$connectionString = sprintf( 'udp://%s:%s', $this->hostName, $this->hostPort );
-		$udpHandler = new SocketHandler( $connectionString );
-		$udpHandler->setChunkSize( self::LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES );
-		$udpHandler->setFormatter( $formatter );
+		$connection = sprintf( 'udp://%s:%s', $this->hostName, $this->hostPort );
+    
+		$handler = new SocketHandler( $connection );
+		$handler->setChunkSize( self::LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES );
+		$handler->setFormatter( $formatter );
 
-		Wonolog\bootstrap( $udpHandler )
-		  ->use_default_processor()
-		  ->log_php_errors()
-		  ->use_default_hook_listeners();
+		return $handler;
 	}
 
 	/**
