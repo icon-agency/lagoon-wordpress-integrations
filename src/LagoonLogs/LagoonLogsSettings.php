@@ -1,6 +1,6 @@
 <?php
 
-namespace IconAgency\Wordpress\LagoonLogs;
+namespace IconAgency\LagoonLogs;
 
 class LagoonLogsSettings {
 

@@ -11,8 +11,8 @@
  * @package IconAgency
  */
 
-use IconAgency\Wordpress\LagoonLogs\LagoonLogsSettings;
-use IconAgency\Wordpress\LagoonLogs\LagoonHandler;
+use IconAgency\LagoonLogs\LagoonLogsSettings;
+use IconAgency\LagoonLogs\LagoonHandler;
 use Inpsyde\Wonolog;
 
 /**

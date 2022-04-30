@@ -1,6 +1,6 @@
 <?php
 
-namespace IconAgency\Wordpress\LagoonLogs;
+namespace IconAgency\LagoonLogs;
 
 use Inpsyde\Wonolog;
 use Monolog\Handler\SocketHandler;
