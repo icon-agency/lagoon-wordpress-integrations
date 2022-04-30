@@ -2,18 +2,16 @@
 /**
  * Plugin Name: WP lagoon logs
  * Description: Simple wonolog wrapper for Lagoon.
- * Version: 0.2
- * Author: Govind Maloo
- * Author URI: http://drupal.org/u/govind.maloo
+ * Version: 0.3
+ * Author: Icon Agency
+ * Author URI: https://iconagency.com.au
  * License: GPL2
- * Modified for usage by Icon Agency
  *
  * @package IconAgency
  */
 
-use IconAgency\LagoonLogs\LagoonLogsSettings;
-use IconAgency\LagoonLogs\LagoonHandler;
-use Inpsyde\Wonolog\Configurator;
+use IconAgency\LagoonLogs\{LagoonLogsSettings, LagoonHandler};
+use Inpsyde\Wonolog\{Configurator, HookListener};
 
 /**
  * Plugin init action because activation hook won't trigger in MU plugin.
@@ -24,9 +22,8 @@ function wp_lagoon_logs_extension_init() {
 	}
 
 	$default = array(
-		'll_settings_logs_host'       => 'application-logs.lagoon.svc',
-		'll_settings_logs_port'       => 5140,
-		'll_settings_logs_identifier' => 'wordpress',
+		'll_settings_logs_host' => 'application-logs.lagoon.svc',
+		'll_settings_logs_port' => 5140,
 	);
 
 	update_option( 'wp_ll_settings', $default );
@@ -36,20 +33,27 @@ if ( is_blog_installed() ) {
 	add_action( 'init', 'wp_lagoon_logs_extension_init' );
 
 	add_action(
-			'wonolog.setup',
-			function (Configurator $config) {
-				$options = get_option( 'wp_ll_settings' );
+		'wonolog.setup',
+		function (Configurator $config) {
+			$options = get_option( 'wp_ll_settings' );
 
-				$handler = new LagoonHandler(
-					$options['ll_settings_logs_host'],
-					$options['ll_settings_logs_port'],
-					$options['ll_settings_logs_identifier']
+			$handler = new LagoonHandler(
+				$options['ll_settings_logs_host'],
+				$options['ll_settings_logs_port'],
+			);
+
+			$config->disableDefaultHookListeners(
+				HookListener\FailedLoginListener::class,
+			);
+
+			if ( getenv( 'LAGOON_ENVIRONMENT' ) ) {
+				$config->pushHandler($handler->handler());
+			} else {
+				$config->disableDefaultHookListeners(
+					HookListener\HttpApiListener::class,
 				);
-
-				if ( getenv( 'LAGOON_ENVIRONMENT' ) ) {
-					$config->pushHandler($handler->handler());
-				}
 			}
+		}
 	);
 	
 	// Settings page is accessible to admin user.

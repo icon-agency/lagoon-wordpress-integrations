@@ -7,49 +7,56 @@ use Monolog\Formatter\LogstashFormatter;
 
 class LagoonHandler {
 
-	const LAGOON_LOGS_DEFAULT_IDENTIFIER = 'wordpress';
+	const LAGOON_LOGS_DEFAULT_SAFE_BRANCH = 'unknown_branch';
 
-	const LAGOON_LOGS_DEFAULT_SAFE_BRANCH = 'safe_branch_unset';
-
-	const LAGOON_LOGS_DEFAULT_LAGOON_PROJECT = 'project_unset';
+	const LAGOON_LOGS_DEFAULT_LAGOON_PROJECT = 'unknown_project';
 
 	const LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES = 15000;
 
-	protected $hostName;
+  /**
+   * Lagoon logs hostname
+   *
+   * @var string
+   */
+	protected $host;
 
-	protected $hostPort;
+  /**
+   * Lagoon logs port
+   *
+   * @var int
+   */
+	protected $port;
 
-	protected $logFullIdentifier;
-
-	protected $parser;
-
-	public function __construct( $host, $port, $logFullIdentifier ) {
-		$this->hostName          = $host;
-		$this->hostPort          = $port;
-		$this->logFullIdentifier = $logFullIdentifier;
+  /**
+   * Helper class to get a handler and processor.
+   *
+   * @param string $host Lagoon logs host.
+   * @param int $port Lagoon logs port.
+   */
+	public function __construct( $host, $port ) {
+		$this->host = $host;
+		$this->port = $port;
 	}
 
 	/**
-	 * Initialize lagoon socket handler to log.
+	 * Monolog UDP socket handler.
 	 */
 	public function handler(): SocketHandler {
-		$formatter = new LogstashFormatter( $this->getHostProcessIndex(), null, 'extra', 'ctxt_' );
-
-		$connection = sprintf( 'udp://%s:%s', $this->hostName, $this->hostPort );
+    $connection = sprintf( 'udp://%s:%s', $this->host, $this->port );
     
 		$handler = new SocketHandler( $connection );
 		$handler->setChunkSize( self::LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES );
+
+		$formatter = new LogstashFormatter( $this->identifier(), null, 'extra', 'ctxt_' );
 		$handler->setFormatter( $formatter );
 
 		return $handler;
 	}
 
 	/**
-	 * Get Lagoon project identifier.
-	 *
-	 * @return string
+	 * Lagoon project identifier.
 	 */
-	protected function getHostProcessIndex() {
+	protected function identifier(): string {
 		return implode(
 			'-',
 			array(
