@@ -8,7 +8,7 @@ Opinionated config and structure for development. Recommended base modules and p
 
 ```yml
   "require": {
-    "iconagency/wordpress_integrations": "^5.0.0",
+    "iconagency/wordpress_integrations": "^6.0.0",
   },
   "extra": {
     "enable-patching": true,
