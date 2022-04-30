@@ -3,6 +3,7 @@
 namespace IconAgency\Wordpress\LagoonLogs;
 
 use Inpsyde\Wonolog;
+use Monolog\Handler\SocketHandler;
 use Monolog\Formatter\LogstashFormatter;
 
 class LagoonHandler {
@@ -13,7 +14,6 @@ class LagoonHandler {
 
 	const LAGOON_LOGS_DEFAULT_LAGOON_PROJECT = 'project_unset';
 
-	// Will be used when new release of monolog is available
 	const LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES = 15000;
 
 	protected $hostName;
@@ -38,9 +38,7 @@ class LagoonHandler {
 
 		// Create socket handler.
 		$connectionString = sprintf( 'udp://%s:%s', $this->hostName, $this->hostPort );
-		$udpHandler       = new SocketHandler( $connectionString );
-
-		// Monolog has a change waiting for release that allows us to have large UDP packets.
+		$udpHandler = new SocketHandler( $connectionString );
 		$udpHandler->setChunkSize( self::LAGOON_LOGS_DEFAULT_CHUNK_SIZE_BYTES );
 		$udpHandler->setFormatter( $formatter );
 
