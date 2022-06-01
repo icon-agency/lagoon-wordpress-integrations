@@ -21,10 +21,10 @@
   },
   "require": {
     "drupal/core-composer-scaffold": "^10.0",
-    "wpackagist-plugin/fastly": "^1.2.18",
+    "wpackagist-plugin/fastly": "^1.2.20",
     "inpsyde/wonolog": "2.x-dev"
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
     "sort-packages": true
