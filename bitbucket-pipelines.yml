@@ -11,7 +11,8 @@ pipelines:
               variables:
                 BITBUCKET_USERNAME: $PIPELINES_TRIGGER_USER
                 BITBUCKET_APP_PASSWORD: $PIPELINES_TRIGGER_PASS
-                BRANCH_NAME: "6.x"
+                REF_TYPE: "branch"
+                REF_NAME: "6.x"
                 ACCOUNT: "iconagency"
                 REPOSITORY: "lagoon-wordpress"
           caches:
