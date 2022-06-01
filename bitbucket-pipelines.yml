@@ -5,9 +5,9 @@ pipelines:
   tags:
     6.*:
       - step:
-          name: Trigger Drupal build
+          name: Trigger Wordpress build
           script:
-            - pipe: atlassian/trigger-pipeline:4.2.1
+            - pipe: atlassian/trigger-pipeline:5.0.0
               variables:
                 BITBUCKET_USERNAME: $PIPELINES_TRIGGER_USER
                 BITBUCKET_APP_PASSWORD: $PIPELINES_TRIGGER_PASS
