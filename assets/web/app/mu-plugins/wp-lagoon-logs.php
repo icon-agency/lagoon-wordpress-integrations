@@ -35,7 +35,9 @@ if ( is_blog_installed() ) {
 	add_action(
 		'wonolog.setup',
 		function (Configurator $config) {
-			$options = get_option( 'wp_ll_settings' );
+			if (! $options = get_option( 'wp_ll_settings' )) {
+				return;
+			}
 
 			$handler = new LagoonHandler(
 				$options['ll_settings_logs_host'],
