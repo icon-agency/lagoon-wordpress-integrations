@@ -56,6 +56,12 @@ Config::define( 'WP_SITEURL', getenv( 'LAGOON_ROUTE' ) ?: 'https://' . $host );
 Config::define( 'PURGELY_FASTLY_KEY', getenv( 'FASTLY_API_TOKEN' ) );
 Config::define( 'PURGELY_FASTLY_SERVICE_ID', getenv( 'FASTLY_API_SERVICE' ) );
 Config::define( 'FASTLY_SITECODE', getenv( 'FASTLY_SITE_ID' ) );
+Config::define( 'PURGELY_CACHE_CONTROL_TTL', 600 );
+Config::define( 'PURGELY_DEFAULT_PURGE_TYPE', 'soft' );
+Config::define( 'PURGELY_ALLOW_PURGE_ALL', false );
+Config::define( 'PURGELY_SURROGATE_CONTROL_TTL', 86400 );
+Config::define( 'PURGELY_ENABLE_STALE_WHILE_REVALIDATE', true );
+Config::define( 'PURGELY_STALE_WHILE_REVALIDATE_TTL', 10800 );
 
 /**
  * Advanced Custom Fields
